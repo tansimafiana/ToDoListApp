@@ -1,46 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 // App.jsx
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import ToDoList from './ToDoList'; // Update the path accordingly
-import ToDoForm from './ToDoForm'; // Update the path accordingly
-
-import {
-  SafeAreaView,
-  StyleSheet,
-  Pressable,
-  View,
-  Text,
-  ScrollView,
-  TextInput,
-  Button
-} from 'react-native';
+import { SafeAreaView, ScrollView, View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 function App() {
   return (
     <SafeAreaView>
       <ScrollView>
-        <Pressable>
+        <TouchableOpacity>
           <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Do laundry</Text>
           </View>
-        </Pressable>
-        <Pressable>
+        </TouchableOpacity>
+        <TouchableOpacity>
           <View style={[styles.task]}>
             <Text style={styles.taskText}>Go to gym</Text>
           </View>
-        </Pressable>
-        <Pressable>
+        </TouchableOpacity>
+        <TouchableOpacity>
           <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Walk dog</Text>
           </View>
-        </Pressable>
+        </TouchableOpacity>
       </ScrollView>
       <View style={styles.form}>
         <TextInput
@@ -83,3 +63,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+

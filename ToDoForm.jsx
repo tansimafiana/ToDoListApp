@@ -1,6 +1,6 @@
 // ToDoForm.jsx
 import React from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, TouchableOpacity, StyleSheet } from 'react-native';
 
 class ToDoForm extends React.Component {
   render() {
@@ -10,7 +10,9 @@ class ToDoForm extends React.Component {
           style={styles.input}
           placeholder="Add a new task..."
         />
-        <Button title="Add" />
+        <TouchableOpacity>
+          <Button title="Add" />
+        </TouchableOpacity>
       </View>
     );
   }
@@ -35,3 +37,4 @@ const styles = StyleSheet.create({
 });
 
 export default ToDoForm;
+

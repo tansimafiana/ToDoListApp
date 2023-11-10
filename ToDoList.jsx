@@ -1,30 +1,19 @@
 // ToDoList.jsx
-
 import React from 'react';
 import { TouchableOpacity, View, Text, ScrollView, StyleSheet } from 'react-native';
 
-class ToDoList extends React.Component {
-  render() {
-    return (
-      <ScrollView>
-        <TouchableOpacity>
+const ToDoList = ({ tasks }) => {
+  return (
+    <ScrollView>
+      {tasks.map((task, index) => (
+        <TouchableOpacity key={index}>
           <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Do laundry</Text>
+            <Text style={styles.taskText}>{task}</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={[styles.task]}>
-            <Text style={styles.taskText}>Go to gym</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Walk dog</Text>
-          </View>
-        </TouchableOpacity>
-      </ScrollView>
-    );
-  }
+      ))}
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -42,3 +31,4 @@ const styles = StyleSheet.create({
 });
 
 export default ToDoList;
+

@@ -1,26 +1,19 @@
 // App.jsx
-import React from 'react';
+import React, { useState } from 'react';
+import ToDoList from './ToDoList'; // Update the path accordingly
 import { SafeAreaView, ScrollView, View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
-function App() {
+const App = () => {
+  const [tasks, setTasks] = useState([
+    'Do laundry',
+    'Go to gym',
+    'Walk dog'
+  ]);
+
   return (
     <SafeAreaView>
       <ScrollView>
-        <TouchableOpacity>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Do laundry</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={[styles.task]}>
-            <Text style={styles.taskText}>Go to gym</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Walk dog</Text>
-          </View>
-        </TouchableOpacity>
+        <ToDoList tasks={tasks} />
       </ScrollView>
       <View style={styles.form}>
         <TextInput
@@ -34,17 +27,6 @@ function App() {
 }
 
 const styles = StyleSheet.create({
-  task: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderColor: '#ccc',
-  },
-  completed: {
-    backgroundColor: '#e0e0e0',
-  },
-  taskText: {
-    fontSize: 16,
-  },
   form: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -63,4 +45,5 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
 
